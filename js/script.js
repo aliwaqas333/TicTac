@@ -1,10 +1,11 @@
 $(document).ready(function() {
+  $('#exampleModalCenter').modal('show')
   let turn = 'tick'
   //tick or cross
   let TurnCount = '1'
   let gameover = false
   let winner = ''
-
+  let GamesPlayed = 1
   let win0_ = ['0_0', '0_1', '0_2'] // [1,1,1,0,0,0,0,0,0]
   let win1_ = ['0_0', '1_0', '2_0'] // [0,0,0,1,1,1,0,0,0]
   let win2_ = ['0_0', '1_1', '2_2'] // [0,0,0,0,0,0,1,1,1]
@@ -42,6 +43,8 @@ $(document).ready(function() {
     for (var i = 0; i < winList.length; i++) {
       ticks = 0
       cross = 0
+      console.log('ROW : ' + i)
+
       for (var j = 0; j < 3; j++) {
         var hasTick = $('#' + winList[i][j]).hasClass('tick')
         var hasCross = $('#' + winList[i][j]).hasClass('cross')
@@ -50,6 +53,11 @@ $(document).ready(function() {
           ticks++
           if (ticks == 3) {
             winner = 'ticks'
+
+            $('#' + winList[i][j - 1]).addClass('winblock')
+            $('#' + winList[i][j - 2]).addClass('winblock')
+            $('#' + winList[i][j]).addClass('winblock')
+            $('#ticksWon').css('display', 'block')
             showResult()
           }
         }
@@ -57,12 +65,16 @@ $(document).ready(function() {
           cross++
           if (cross == 3) {
             winner = 'cross'
+            $('#' + winList[i][j - 1]).addClass('winblock')
+            $('#' + winList[i][j - 2]).addClass('winblock')
+            $('#' + winList[i][j]).addClass('winblock')
+            $('#crossWon').css('display', 'block')
             showResult()
           }
         }
 
-        //console.log('ticks= ' + ticks)
-        //console.log('crosses' + cross)
+        console.log('ticks= ' + ticks)
+        console.log('crosses' + cross)
 
         if (winner != '') gameover = true
         //console.log('Winner : ' + winner)
@@ -74,5 +86,12 @@ $(document).ready(function() {
 
   function showResult() {
     console.log('Game Over! ' + winner + ' Win')
+    $('#TryAgain').modal('show')
+  }
+  function TryAgain() {
+    GamesPlayed++
+    $('.block').removeClass('tick')
+    $('.block').removeClass('cross')
+    alert()
   }
 })

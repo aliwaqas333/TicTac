@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tik Cross</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="js/jquery.js"></script>
 
 </head>
@@ -21,7 +22,7 @@
                     <div class="block" id="0_2"></div>
                 </div>
                 <div class="row">
-                    <div class="block" id="1-0"></div>
+                    <div class="block" id="1_0"></div>
                     <div class="block" id="1_1"></div>
                     <div class="block" id="1_2"></div>
                 </div>
@@ -33,9 +34,56 @@
             </div>
 
         </div>
+        <div class="result">
+            <h1 id="ticksWon">Ticks Won</h1>
+            <h1 id="crossWon">Cross Won</h1>
+        </div>
     </div>
 
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Welcome to TicTacToe Game</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times; </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    We Belive that no man can ever defeat this AI
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">I wanna Try</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="TryAgain" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Game Over !</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times; </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You can Try again by clicking on the Try again button. Good Luck!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button onclick="location.reload()" type="button" class="btn btn-primary" data-dismiss="modal">I
+                        wanna Try again</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/script.js"></script>
+    <script src="./js/bootstrap.js"></script>
 
 </body>
 

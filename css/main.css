@@ -28,6 +28,10 @@
   top: 50%;
 }
 
+#ticksWon, #crossWon {
+  display: none;
+}
+
 .block {
   height: 80px;
   width: 80px;
@@ -36,15 +40,21 @@
   z-index: 100;
   margin: 5px;
 }
+
 .tick {
   background-image: url('../images/tick.png') !important;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .cross {
   background-image: url('../images/cross2.png') !important;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.winblock {
+  border: brown 5px solid;
 }
