@@ -58,4 +58,5 @@
 
 .winblock {
   border: rgb(255, 0, 0) 5px solid;
+  animation: all ease-in-out;
 }
