@@ -28,7 +28,8 @@
   top: 50%;
 }
 
-#ticksWon, #crossWon {
+#ticksWon,
+#crossWon {
   display: none;
 }
 
@@ -56,5 +57,5 @@
 }
 
 .winblock {
-  border: brown 5px solid;
+  border: rgb(255, 0, 0) 5px solid;
 }
