@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #27ae60;
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.game-box {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.block {
+  height: 80px;
+  width: 80px;
+  width: calc(100%-100px);
+  background-color: #f1c40f;
+  z-index: 100;
+  margin: 5px;
+}
+.tick {
+  background-image: url('../images/tick.png') !important;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cross {
+  background-image: url('../images/cross2.png') !important;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
