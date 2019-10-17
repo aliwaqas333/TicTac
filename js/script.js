@@ -109,11 +109,13 @@ $(document).ready(function() {
     }
   }
   function AiTurn() {
-    var id = '#' + bestSpot()
-    $(id).removeClass('empty')
-    $(id).addClass('cross')
-    TurnCount++
-    WinCheck()
+    if (!gameover) {
+      var id = '#' + bestSpot()
+      $(id).removeClass('empty')
+      $(id).addClass('cross')
+      TurnCount++
+      WinCheck()
+    }
   }
   function bestSpot() {
     //Ai Player plays here
