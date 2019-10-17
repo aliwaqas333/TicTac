@@ -138,18 +138,20 @@ $(document).ready(function() {
   }
   function checkTie() {
     tiecount = 0
-    for (var i = 0; i < Board.length; i++) {
-      for (var j = 0; j < Board[i].length; j++) {
-        if ($('#' + Board[i][j]).hasClass('empty')) {
-          tiecount++
+    if (!gameover) {
+      for (var i = 0; i < Board.length; i++) {
+        for (var j = 0; j < Board[i].length; j++) {
+          if ($('#' + Board[i][j]).hasClass('empty')) {
+            tiecount++
+          }
         }
       }
-    }
-    if (tiecount == 0) {
-      gameTied = true
-      gameover = true
-      winner = 'No One'
-      console.log('Game Tied')
+      if (tiecount == 0) {
+        gameTied = true
+        gameover = true
+        winner = 'No One'
+        console.log('Game Tied')
+      }
     }
   }
 })
