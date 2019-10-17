@@ -6,7 +6,7 @@ $(document).ready(function() {
   let gameover = false
   let winner = ''
   let GamesPlayed = 1
-  let gameTied=false
+  let gameTied = false
   let win0_ = ['0_0', '0_1', '0_2'] // [1,1,1,0,0,0,0,0,0]
   let win1_ = ['0_0', '1_0', '2_0'] // [0,0,0,1,1,1,0,0,0]
   let win2_ = ['0_0', '1_1', '2_2'] // [0,0,0,0,0,0,1,1,1]
@@ -17,10 +17,10 @@ $(document).ready(function() {
   let win11 = ['2_0', '2_1', '2_2'] // [0,0,1,0,1,0,1,0,0]
   let winList = [win0_, win1_, win2_, win_0, win_1, win_2, win00, win11]
 
-  let Board1=['0_0','0_1','0_2']
-  let Board2=['1_0','1_1','1_2']
-  let Board3=['2_0','2_1','2_2']
-  let Board=[Board1,Board2,Board3]
+  let Board1 = ['0_0', '0_1', '0_2']
+  let Board2 = ['1_0', '1_1', '1_2']
+  let Board3 = ['2_0', '2_1', '2_2']
+  let Board = [Board1, Board2, Board3]
 
   $('.block').click(function(event) {
     //TurnCount % 2 == 0 ? (turn = 'x') : (turn = 't')
@@ -35,14 +35,11 @@ $(document).ready(function() {
         WinCheck()
         TurnCount++
         AiTurn()
-       } 
-       
-      } else {
-        if (gameover == true) {
-          showResult()
-        }
-       
-       
+      }
+    } else {
+      if (gameover == true) {
+        showResult()
+      }
 
       //   else if (!hasTick && !hasCross && turn === 'x') {
       //   $(this).addClass('cross')
@@ -50,7 +47,6 @@ $(document).ready(function() {
       //   WinCheck()
       //   TurnCount++
       // }
-
     }
   })
 
@@ -72,7 +68,7 @@ $(document).ready(function() {
             $('#' + winList[i][j - 1]).addClass('winblock')
             $('#' + winList[i][j - 2]).addClass('winblock')
             $('#' + winList[i][j]).addClass('winblock')
-           // $('#WhoWon').html(winner)
+            // $('#WhoWon').html(winner)
             showResult()
           }
         }
@@ -83,57 +79,53 @@ $(document).ready(function() {
             $('#' + winList[i][j - 1]).addClass('winblock')
             $('#' + winList[i][j - 2]).addClass('winblock')
             $('#' + winList[i][j]).addClass('winblock')
-           // $('#crossWon').css('display', 'block')
+            // $('#crossWon').css('display', 'block')
             showResult()
           }
         }
 
-       // console.log('ticks= ' + ticks)
-       // console.log('crosses' + cross)
-        checkTie();
+        // console.log('ticks= ' + ticks)
+        // console.log('crosses' + cross)
+        checkTie()
 
         if (winner != '') {
           gameover = true
           showResult()
         }
-        
+
         //console.log('Winner : ' + winner)
         //console.log('gamerover : ' + gameover)
       }
-     // console.log('+++++++++++++++++++++')
+      // console.log('+++++++++++++++++++++')
     }
   }
 
   function showResult() {
-    if(winner != ''){
-      $('#WhoWon').html(winner)
+    if (winner != '') {
+      $('#WhoWon').html('Game Over! ' + winner + ' Win')
 
       console.log('Game Over! ' + winner + ' Win')
       $('#TryAgain').modal('show')
     }
-
   }
-  function AiTurn(){
-    var id='#'+bestSpot();
+  function AiTurn() {
+    var id = '#' + bestSpot()
     $(id).removeClass('empty')
     $(id).addClass('cross')
     TurnCount++
     WinCheck()
-
   }
-  function bestSpot(){
+  function bestSpot() {
     //Ai Player plays here
-    var id=randomEmpty()
+    var id = randomEmpty()
     return id
-
   }
-  function randomEmpty(){
-    for(var i=0;i<Board.length;i++){
-      for(var j=0;j<Board[i].length;j++){
-        if($('#'+Board[i][j]).hasClass('empty')){
-          console.log('empty random spot'+Board[i][j])
+  function randomEmpty() {
+    for (var i = 0; i < Board.length; i++) {
+      for (var j = 0; j < Board[i].length; j++) {
+        if ($('#' + Board[i][j]).hasClass('empty')) {
+          console.log('empty random spot' + Board[i][j])
           return Board[i][j]
-          
         }
       }
     }
@@ -144,21 +136,20 @@ $(document).ready(function() {
     $('.block').removeClass('cross')
     alert()
   }
-  function checkTie(){
-    tiecount=0
-    for(var i=0;i<Board.length;i++){
-      for(var j=0;j<Board[i].length;j++){
-        if($('#'+Board[i][j]).hasClass('empty')){
+  function checkTie() {
+    tiecount = 0
+    for (var i = 0; i < Board.length; i++) {
+      for (var j = 0; j < Board[i].length; j++) {
+        if ($('#' + Board[i][j]).hasClass('empty')) {
           tiecount++
         }
       }
     }
-    if(tiecount==0) {
-      gameTied=true;
-      gameover=true;
-      winner='No One'
+    if (tiecount == 0) {
+      gameTied = true
+      gameover = true
+      winner = 'No One'
       console.log('Game Tied')
-    }   
+    }
   }
-
 })
