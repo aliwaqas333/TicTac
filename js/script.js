@@ -65,8 +65,8 @@ function gameOver(gameWon) {
 }
 
 function declareWinner(who) {
-	document.querySelector(".endgame").style.display = "block";
-	document.querySelector(".endgame .text").innerText = who;
+	//document.querySelector(".endgame").style.display = "block";
+	//document.querySelector(".endgame .text").innerText = who;
 }
 
 function emptySquares() {
