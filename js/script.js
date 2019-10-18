@@ -16,7 +16,7 @@ const cells = document.querySelectorAll('.block');
 startGame();
 
 function startGame() {
-	//document.querySelector(".endgame").style.display = "none";
+	document.querySelector(".endgame").style.display = "none";
 	origBoard = Array.from(Array(9).keys());
 	console.log(origBoard)
 	for (var i = 0; i < cells.length; i++) {
