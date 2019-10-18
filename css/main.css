@@ -3,14 +3,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+.replaybtn{
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+}
 
 .main-wrapper {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: #27ae60;
   display: flex;
   justify-content: center;
+  background-color: #27ae60;
 }
 
 .row {
@@ -28,35 +33,20 @@
   top: 50%;
 }
 
-#ticksWon,
-#crossWon {
-  display: none;
-}
 
 .block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 80px;
   width: 80px;
   width: calc(100%-100px);
   background-color: #f1c40f;
   z-index: 100;
   margin: 5px;
+  font-size: 50px;
+  font-weight: bold;
 }
 
-.tick {
-  background-image: url('../images/tick.png') !important;
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
-.cross {
-  background-image: url('../images/cross2.png') !important;
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
-.winblock {
-  border: rgb(255, 0, 0) 5px solid;
-  animation: all ease-in-out;
-}
